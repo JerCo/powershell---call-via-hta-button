@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<head>
+
+<script type = "text/vbscript">
+
+function buttonClick(passed_value)
+	Dim filepath	
+	filepath = "C:/Powershell/" & passed_value
+	Set wShell = CreateObject("Shell.Application")
+	' run as administrator not needed
+	' wShell.ShellExecute "powershell.exe", "-executionpolicy unrestricted -noexit " & filepath, , "runas", 1
+	wShell.ShellExecute "powershell.exe", "-executionpolicy unrestricted -noexit " & filepath
+end function
+
+</script>
+
+</head>
+
+<body>
+
+<button type="button" onclick="buttonClick('test_script.ps1')">Test Script</button>
+
+</body>
+
+</html>
